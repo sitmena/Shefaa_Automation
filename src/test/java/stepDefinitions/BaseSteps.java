@@ -13,11 +13,12 @@ public class BaseSteps {
     public TestContext testContext;
 
     public RegisterVolunteer registerVolunteer;
-
+    public LoginVolunteer loginVolunteer;
     public BaseSteps(TestContext context) {
         testContext = context;
         webDriver = testContext.getDriverManager().getDriver();
         registerVolunteer=new RegisterVolunteer(webDriver);
+        loginVolunteer=new LoginVolunteer(webDriver);
     }
 
 }
