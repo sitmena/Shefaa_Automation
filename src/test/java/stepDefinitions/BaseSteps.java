@@ -12,17 +12,19 @@ public class BaseSteps {
     public WebDriver webDriver;
     public TestContext testContext;
 
-    public RegisterVolunteer registerVolunteer;
-    public LoginVolunteer loginVolunteer;
+    public RegisterDonor registerDonor;
+    public LoginDonor loginDonor;
     public RegisterAssociation registerAssociation;
+    public DeclineAssociation declineAssociation;
     
 
     public BaseSteps(TestContext context) {
         testContext = context;
         webDriver = testContext.getDriverManager().getDriver();
-        registerVolunteer=new RegisterVolunteer(webDriver);
-        loginVolunteer=new LoginVolunteer(webDriver);
+        registerDonor=new RegisterDonor(webDriver);
+        loginDonor=new LoginDonor(webDriver);
         registerAssociation=new RegisterAssociation(webDriver);
+        declineAssociation=new DeclineAssociation(webDriver);
      
 
     }
