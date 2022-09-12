@@ -82,6 +82,11 @@ public class RegisterAssociation {
     private WebElement rules;
     @FindBy(id = "successmessage")
     private WebElement successMsg;
+    @FindBy(id = "emailotp")
+    private WebElement emailOtp;
+    @FindBy(id = "confirmotp")
+    private WebElement confirmOtp;
+
 
 
 
@@ -101,6 +106,13 @@ public class RegisterAssociation {
         Assert.assertTrue(otp1.isDisplayed());
     }
 
+    public void fillEmailOtp(){
+        this.emailOtp.click();
+    }
+
+    public void confirmOtp(){
+        this.confirmOtp.click();
+    }
 
     public void userFilllicNumber(int licnum) throws InterruptedException{
 

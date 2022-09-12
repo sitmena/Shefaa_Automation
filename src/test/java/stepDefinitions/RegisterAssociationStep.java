@@ -31,6 +31,13 @@ public class RegisterAssociationStep extends BaseSteps {
 
 
 
+
+    @And("^enter the correct email otp And confirm (.*)$")
+    public void enterTheCorrectEmailOtpAndConfirmOtp() {
+        registerAssociation.fillEmailOtp();
+        registerAssociation.confirmOtp();
+    }
+
     @And("^enter his license number And choose inquiry (\\d+)$")
     public void enterHisLicenseNumberAndChooseInquiryLicenseNumber(int licnum)throws InterruptedException {
         registerAssociation.userFilllicNumber(licnum);
@@ -54,4 +61,6 @@ public class RegisterAssociationStep extends BaseSteps {
     @Then("form will sent to the system manager")
     public void formWillSentToTheSystemManager() {
     }
+
+
 }
