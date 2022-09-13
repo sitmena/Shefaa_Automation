@@ -4,6 +4,7 @@ import Helpers.UsersHelper;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pageObjects.LoginDonor;
 import utilities.TestContext;
 
 public class LoginDonorStep extends BaseSteps {
@@ -21,6 +22,6 @@ public class LoginDonorStep extends BaseSteps {
 
     @Then("user will move to home page")
     public void userWillMoveToHomePage() {
-
+        loginDonor.verifyUserLoggedIn();
     }
 }

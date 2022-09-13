@@ -20,6 +20,9 @@ public class LoginDonor {
     private WebElement mobileNum;
     @FindBy(id = "otp")
     private WebElement otp;
+    @FindBy(id = "hello")
+    private WebElement helloWord;
+
     public void userClickOnLoginButton(){
 
         this.signinBtn.click();
@@ -34,8 +37,9 @@ public class LoginDonor {
         Assert.assertTrue(otp.isDisplayed());
 
     }
-
-
+public void verifyUserLoggedIn(){
+        Assert.assertTrue(helloWord.isDisplayed());
+}
 
 
 

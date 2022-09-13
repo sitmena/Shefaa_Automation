@@ -37,7 +37,7 @@ public class RegisterDonor {
     private WebElement loginBtn;
     @FindBy(id = "profile")
     private WebElement profileIcon;
-    @FindBy(id = "profile")
+    @FindBy(id = "hello")
     private WebElement helloWord;
 
 
@@ -125,7 +125,9 @@ else{
 Assert.assertTrue(titleAppeared);
     }
 
-
+public void verifyUserMovedToProfile(){
+        Assert.assertTrue(profileIcon.isDisplayed());
+}
 
 
 

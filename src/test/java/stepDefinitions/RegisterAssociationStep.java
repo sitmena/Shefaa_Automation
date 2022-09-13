@@ -9,6 +9,7 @@ import utilities.TestContext;
 
 import javax.swing.*;
 import java.io.File;
+import java.io.IOException;
 import java.util.Date;
 
 public class RegisterAssociationStep extends BaseSteps {
@@ -23,19 +24,24 @@ public class RegisterAssociationStep extends BaseSteps {
 
 
 
-    @When("^enter his mobile number And date of birth And email And id And confirm (\\d+) (.*) (.*) (\\d+)$")
-    public void enterHisMobileNumberAndDateOfBirthAndEmailAndIdAndConfirmMobileNumberDateOfBirthEmailId(int mobilenum, Date dob,String email,int id) {
-      registerAssociation.userfillrequiredfields(mobilenum,dob,email,id);
+    @When("^enter his mobile number And date of birth And email And id And confirm (\\d+) (\\d+) (.*) (\\d+) (.*) (\\d+)$")
+    public void enterHisMobileNumberAndDateOfBirthAndEmailAndIdAndConfirmMobileNumberDateOfBirthEmailId(int mobilenum,int year,String month,int day,String email,int id) throws IOException, InterruptedException {
+      registerAssociation.userfillrequiredfields(mobilenum,year,month,day,email,id);
       registerAssociation.confirm();
     }
 
 
+    @And("^enter the correct mobile otp And confirm (.*)$")
+    public void enterTheCorrectMobileOtpAndConfirmOtp() {
+registerAssociation.fillmobileotp();
+        registerAssociation.confirmmobileOtp();
 
+    }
 
     @And("^enter the correct email otp And confirm (.*)$")
     public void enterTheCorrectEmailOtpAndConfirmOtp() {
         registerAssociation.fillEmailOtp();
-        registerAssociation.confirmOtp();
+        registerAssociation.confirmemailOtp();
     }
 
     @And("^enter his license number And choose inquiry (\\d+)$")
@@ -45,9 +51,10 @@ public class RegisterAssociationStep extends BaseSteps {
 
     }
 
-    @And("^fill the association name And association type And association logo And expiry date And license file And iban And bank account And association number And email And association location And city And town And location link And number of service providers And hospital name And discount rate And owner name And ceo name And ceo number And confirm the rules (.*) (.*) (.*) (.*) (.*) (\\d+) (\\d+)(\\d+) (.*) (.*) (.*) (.*) (.*) (\\d+) (.*) (\\d+) (.*) (.*)(\\d+)$")
-    public void fillTheAssociationNameAndAssociationTypeAndAssociationLogoAndExpiryDateAndLicenseFileAndIbanAndBankAccountAndAssociationNumberAndEmailAndAssociationLocationAndCityAndTownAndLocationLinkAndNumberOfServiceProvidersAndHospitalNameAndDiscountRateAndOwnerNameAndCeoNameAndCeoNumberAndConfirmTheRulesAssociationNameAssociationTypeAssociationLogoExpiryDateLicenseFileIbanBankAccountAssociationNumberEmailAssociationLocationCityTownLocationLinkNumberOfServiceProvidersHospitalNameDiscountRateOwnerNameCeoNameCeoNumber(String associationname, String associationtype, ImageIcon associationlogo, Date expirydate, File licensefile,int iban,int bankaccount,int associationnumber,String email,String associationlocation, String city,String town,String locationlink,int numberofproviders,String hospitalname, int discountrate,String ownername, String ceoname,int ceonumber) throws InterruptedException {
-   registerAssociation.userfillassociationinfo(associationname,associationtype,associationlogo,expirydate,licensefile,iban,bankaccount,associationnumber,email,associationlocation,city,town,locationlink,numberofproviders,hospitalname,discountrate,ownername,ceoname,ceonumber);
+    @And("^fill the registration form And confirm the rules (\\d+)(\\d+)(.*)(\\d+)(.*)(.*)(\\d+)(\\d+)(.*)(\\d+)$")
+    public void fillTheRegistrationForm( int iban,int associationnumber,String email,int secondotp,String associationlocation,String locationlink,int numberofproviders, int discountrate,String ceoname,int ceonumber) throws InterruptedException, IOException {
+   registerAssociation.userfillassociationinfo(iban,associationnumber,email,secondotp,associationlocation,locationlink,numberofproviders,discountrate,ceoname,ceonumber);
+
    registerAssociation.confirmrules();
     }
 
@@ -61,6 +68,7 @@ public class RegisterAssociationStep extends BaseSteps {
     @Then("form will sent to the system manager")
     public void formWillSentToTheSystemManager() {
     }
+
 
 
 }

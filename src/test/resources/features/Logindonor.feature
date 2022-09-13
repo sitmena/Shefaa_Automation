@@ -6,8 +6,8 @@ Feature: Login Already Existing Donor Tests
 
     Given user on be a friend of shefaa page And choose user type option <user type>
     When enter his mobile number <mobile number>
-    And enter the correct otp And confirm <otp>
+    And enter the correct otp And confirm <otp> <btnType>
     Then user will move to home page
     Examples:
-       | mobile number | otp |
-     | 996279056368     | 123321 |
+       | mobile number | otp |    btnType  |
+     | 996279056368     | 123321 |  Login |
