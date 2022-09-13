@@ -17,15 +17,17 @@ public class LoginAssociationStep extends BaseSteps {
 
 
     @When("^enter his mobile number And password (\\d+)(.*)$")
-    public void enterHisMobileNumberAndPasswordMobileNumberPassword() {
-
+    public void enterHisMobileNumberAndPassword(int mobilenumber,String password) {
+        loginAssociation.enterfields(mobilenumber,password);
     }
 
     @And("choose login button")
     public void chooseLoginButton() {
+        loginAssociation.chooselogin();
     }
 
-    @Then("user will move to  association home page")
+    @Then("user will move to association home page")
     public void userWillMoveToAssociationHomePage() {
+        loginAssociation.verifyuserunderhomepage();
     }
 }
