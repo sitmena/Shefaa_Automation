@@ -33,12 +33,13 @@ public class RegisterDonorStep extends BaseSteps {
      registerDonor.confirmrules();
     }
 
-    @And("^enter the correct otp And confirm (\\d+)$")
+    @And("^enter the correct otp And confirm (\\d+) (.*)$")
     public void enterTheCorrectOtpAndConfirmOtp(int otp,String type) throws InterruptedException {
        registerDonor.enterotp(otp);
        registerDonor.userchoosethebutton(type);
     }
     @Then("user will move to his profile page")
     public void userWillMoveToHisProfilePage() {
+        registerDonor.verifyUserMovedToProfile();
     }
 }

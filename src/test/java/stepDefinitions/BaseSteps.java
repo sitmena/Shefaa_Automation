@@ -16,6 +16,7 @@ public class BaseSteps {
     public LoginDonor loginDonor;
     public RegisterAssociation registerAssociation;
     public DeclineAssociation declineAssociation;
+    public LoginAssociation loginAssociation;
     
 
     public BaseSteps(TestContext context) {
@@ -25,6 +26,7 @@ public class BaseSteps {
         loginDonor=new LoginDonor(webDriver);
         registerAssociation=new RegisterAssociation(webDriver);
         declineAssociation=new DeclineAssociation(webDriver);
+      loginAssociation=new LoginAssociation(webDriver);
      
 
     }
