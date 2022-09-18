@@ -15,7 +15,7 @@ public class BaseSteps {
     public RegisterDonor registerDonor;
     public LoginDonor loginDonor;
     public RegisterAssociation registerAssociation;
-    public DeclineAssociation declineAssociation;
+    public AcceptAssociation acceptAssociation;
     public LoginAssociation loginAssociation;
     
 
@@ -25,7 +25,7 @@ public class BaseSteps {
         registerDonor=new RegisterDonor(webDriver);
         loginDonor=new LoginDonor(webDriver);
         registerAssociation=new RegisterAssociation(webDriver);
-        declineAssociation=new DeclineAssociation(webDriver);
+        acceptAssociation=new AcceptAssociation(webDriver);
       loginAssociation=new LoginAssociation(webDriver);
      
 
