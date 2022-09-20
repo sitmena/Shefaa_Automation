@@ -17,6 +17,7 @@ public class BaseSteps {
     public RegisterAssociation registerAssociation;
     public AcceptAssociation acceptAssociation;
     public LoginAssociation loginAssociation;
+    public SetDonorInfo setDonorInfo;
     
 
     public BaseSteps(TestContext context) {
@@ -27,7 +28,7 @@ public class BaseSteps {
         registerAssociation=new RegisterAssociation(webDriver);
         acceptAssociation=new AcceptAssociation(webDriver);
       loginAssociation=new LoginAssociation(webDriver);
-     
+     setDonorInfo=new SetDonorInfo(webDriver);
 
     }
 
