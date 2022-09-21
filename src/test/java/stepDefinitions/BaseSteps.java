@@ -19,6 +19,7 @@ public class BaseSteps {
     public LoginAssociation loginAssociation;
     public SetDonorInfo setDonorInfo;
     public ClearDonorInfo clearDonorInfo;
+    public CharityForgetPassword charityForgetPassword;
 
     public BaseSteps(TestContext context) {
         testContext = context;
@@ -29,6 +30,7 @@ public class BaseSteps {
         acceptAssociation=new AcceptAssociation(webDriver);
       loginAssociation=new LoginAssociation(webDriver);
     clearDonorInfo=new ClearDonorInfo(webDriver);
+    charityForgetPassword=new CharityForgetPassword(webDriver);
 
     }
 
