@@ -12,4 +12,4 @@ Feature: Clear Personal Information For Donor Tests
     Then clear success message will appears
     Examples:
       | mobile number    | otp    |    btnType  |
-      | 996279056368     | 123321 |  Login      | 
+      | 996279056368     | 123321 |  Login      |
